@@ -1,0 +1,252 @@
+:root{
+    --primary-color:hsl(223, 87%, 63%);
+
+    --secondary-color-blue:hsl(223, 100%, 88%);
+    --secondary-color-red:hsl(354, 100%, 66%);
+
+    --neutral-color-dark:hsl(209, 33%, 12%);
+    --neutral-color-light:hsl(0, 0%, 59%);
+
+    --success-color: hsl(154, 59%, 51%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 20px;
+}
+
+body{
+    font-family: 'Libre Franklin', sans-serif;
+    line-height: 1.6;
+    background-color:var(--secondary-color-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* start styling============================== */
+.container{
+    background-color: #fff;
+    text-align: center;
+    padding: 2rem 7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-img{
+    height: 20px;
+}
+
+h1 span{
+    color: var(--neutral-color-light);
+}
+
+p{
+    color: var(--neutral-color-dark);
+    font-weight: 300;
+}
+
+/* form/email address================================== */
+.form{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: space-between;
+    padding: 30px 0 50px 0;
+}
+
+.form input{
+    padding: 1rem;
+    border-radius: 30px;
+    border: 2px solid var(--secondary-color-blue);
+}
+
+input::placeholder{
+    color: var(--secondary-color-blue);
+    font-weight: 600;
+    padding-left: 7px;
+}
+
+.form small{
+    grid-column: 1/2;
+    /* visibility: hidden; */
+    display: none;
+}
+
+.form button{
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 30px;
+    border: none;
+    background-color:var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+input:focus,
+button:focus{
+    outline: 0;
+}
+
+/* ================================================ */
+.dashboard{
+    width: 620px;
+    padding-bottom: 30px;
+}
+
+.social-button{
+    list-style: none;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon{
+    padding-left: 1rem;
+}
+
+ion-icon{
+    color: var(--primary-color);
+}
+
+.copyright{
+    font-size: 10px;
+    color:var(--neutral-color-light);
+}
+
+.attribution{
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* JS classes===================================== */
+.form.error input{
+    border-color: var(--secondary-color-red);
+}
+
+.form.success input{
+    border-color: var(--success-color);
+}
+
+.form.error small{
+    color: var(--secondary-color-red);
+    text-align: left;
+    padding-left: 1rem;
+    padding-top: 5px;
+    font-size: 12px;
+    visibility: visible;
+    display: block;
+}
+
+
+/* media query====================================== */
+@media only screen and (max-width: 900px) {
+    .form{
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .form input{
+        width: 100%;
+        margin: 0 auto;
+        font-size: 13px;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+    }
+
+    .form small{
+        padding-top: 1px;
+    }
+
+    .form button{
+        width: 100%;
+        margin: 0 auto;
+        font-weight: 700;
+        padding: 10px 0;
+    }
+
+    input::placeholder{
+        font-size: 13px;
+        padding: 0 20px;
+    }
+
+    .form.error small{
+        padding-top: 3px;
+        font-size: 10px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .dashboard{
+        width: 450px;
+        padding-bottom: 50px;
+    }
+
+    .copyright{
+        font-size: 15px;
+    }
+}
+
+/* media query 375px=================================== */
+@media only screen and (max-width: 375px){
+    .container{
+        padding: 1rem 3rem;
+    }
+
+    .logo-img{
+        height: 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    
+    h1{
+        font-size: 20px;
+    }
+    
+    p{
+        font-size: 13px;
+    }
+    
+    .form input{
+        margin-bottom: 5px;
+    }
+
+    .form button{
+        font-size: 13px;
+    }
+
+    .form.error small{
+        font-size: 10px;
+        padding-bottom: 5px;
+    }
+
+    .dashboard{
+        width: 250px;
+    }
+
+    .copyright{
+        font-size: 10px;
+    }
+    
+    .attribution{
+        display: none;
+    }
+}
